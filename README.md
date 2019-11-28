@@ -10,3 +10,4 @@ Finally, an email will be received by the host/employee regarding the booking de
 From host's side he can also have a total overall look of his reservations
 After the meeting is done the visitor checksout using unique booking id reference which he had earlier received at the time of booking.
 Thereafter checkout, he will receive the summary of meeting through his email fro future references.
+For the website functionality the url is as follows : http://mudassir.pythonanywhere.com/
