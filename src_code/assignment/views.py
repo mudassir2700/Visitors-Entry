@@ -127,7 +127,7 @@ def booking_view(request):
 				message ="Name : "+user.name+"\n"+"Contact Number : "+str(user.contact)+'\n'+"Email : "+str(user.email)+'\n'+"In Time : "+str(user.in_time)+'\n'+"Out Time : "+str(user.out_time)+'\n'+"Booking Id : "+str(user.booking_id)
 				message1 = "Hello "+user.name+"Your Booking Id : "+str(user.booking_id)
 				to_email = user.host.email
-				to_email1 = user.mail
+				to_email1 = user.email
 				from_email = settings.EMAIL_HOST_USER
 				to_list = [to_email,settings.EMAIL_HOST_USER]
 				to_list1 = [to_email1,settings.EMAIL_HOST_USER]
