@@ -32,7 +32,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	min-height:600px;
+	min-height:500px;
 	position: relative;
 }
 
@@ -50,7 +50,7 @@ body {
 
 }
 
-.li a,.li1 a,.li2 a,.li3 a,.li4 a {
+.li a,.li1 a,.li2 a,.li3 a,.li4 a,.li5 a {
   display: block;
   color: white;
   text-align: center;
@@ -60,7 +60,7 @@ body {
   text-decoration: none;
 }
 
-.li a:hover,.li1 a:hover,.li2 a:hover,.li3 a:hover,.li4 a:hover {
+.li a:hover,.li1 a:hover,.li2 a:hover,.li3 a:hover,.li4 a:hover,.li5 a:hover {
   
   transform: scale(1.2); 
 }
@@ -121,6 +121,13 @@ body {
 }
 
 .li4{
+  margin-right: 10px;
+  float: left;
+   padding: 23px 10px;
+   font-size: 16.5px;margin-left: 10px;
+   background-color: #333;
+}
+.li5{
   margin-right: 10px;
   float: left;
    padding: 23px 10px;
@@ -280,6 +287,8 @@ sec0 {  0% {
   <li class="li3" id="lii3"><a class="active" href="{% url 'assignment:booking' %}">Book appointment</a></li>
   <hr class="ul_hr">
   <li class="li4" id="lii4"><a class="active" href="{% url 'assignment:checkout' %}">Checkout</a></li>
+  <hr class="ul_hr">
+  <li class="li5" id="lii5"><a class="active" href="{% url 'assignment:reservations' %}">Reservations</a></li>
   
   <li><img src="{% static 'arrow.png' %}" id="upBtn" onclick="function2()"></li>
   
