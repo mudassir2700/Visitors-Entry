@@ -1,0 +1,299 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+
+	margin: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	display: block;
+
+	font-size: 20px;
+}
+
+
+
+.can{
+	background-image: url('{% static 'booking_img/background.jpg' %}');
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height:600px;
+	position: relative;
+}
+
+
+.ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #333;
+  opacity: 0.9;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+}
+
+.li a,.li1 a,.li2 a,.li3 a,.li4 a {
+  display: block;
+  color: white;
+  text-align: center;
+  transition: transform 0.2s;
+
+ 
+  text-decoration: none;
+}
+
+.li a:hover,.li1 a:hover,.li2 a:hover,.li3 a:hover,.li4 a:hover {
+  
+  transform: scale(1.2); 
+}
+
+.ul_hr{
+	display: none;
+	 border: 1px solid #f1f1f1;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+
+.li {
+  float: left;
+   padding: 23px 10px;
+   font-size: 16.5px;margin-left: 10px;
+   background-color: #333;
+}
+
+.dropdown{
+	float: left;
+	margin-left: 10px;
+	display: inline-block;
+	z-index: 1;
+	height:auto; 
+	
+}
+
+.li1{
+	float: left;
+   padding: 23px 10px;
+
+	opacity: 0.5; font-size: 16.5px;margin-left: 300px;
+	background-color: #333;
+
+}
+
+.name_navbar{
+   float:left;margin-left: 110px; font-family: sans-serif;color:white;box-sizing: border-box;padding: 2px;margin-top: 15px;border-style: solid;border-width: 1px;font-size: 24px;
+   background-color: #333;
+
+}
+
+.li2{
+	margin-right: 10px;
+	float: left;
+   padding: 23px 10px;
+   font-size: 16.5px;margin-left: 10px;
+   background-color: #333;
+}
+
+.li3{
+  margin-right: 10px;
+  float: left;
+   padding: 23px 10px;
+   font-size: 16.5px;margin-left: 10px;
+   background-color: #333;
+}
+
+.li4{
+  margin-right: 10px;
+  float: left;
+   padding: 23px 10px;
+   font-size: 16.5px;margin-left: 10px;
+   background-color: #333;
+}
+
+#upBtn{
+
+	height: 25px;width: 25px;display:none;
+	cursor: pointer;
+}
+
+#downBtn{
+
+	height: 25px;width: 25px;display:none;
+	cursor: pointer;
+}
+
+.can_h2{
+
+	position: absolute; top:270px;left:31%;right: 100px;color:white;font-size: 50px;font-family:sans-serif;font-weight: 500;
+
+
+}
+
+.can_p{
+
+	position: absolute; top:343px;left: 40%;right: 70px;color: white;
+  font-size:40px; font-family: Arial, Helvetica, sans-serif;
+}
+
+#intro {
+	display: block;
+  position: fixed;
+  top: 34%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+#title {
+
+	color: white;
+	font-size: 60px;
+	font-family: sans-serif;
+	font-weight: 500;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-animation: sec0 1s ease-in-out 100ms forwards;
+  animation: sec0 1s ease-in-out 100ms forwards;
+  
+}
+
+#intro1 {
+	display: block;
+  position: fixed;
+  top: 46%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+
+
+
+#title1 {
+
+	color: white;
+	font-size: 50px;
+	font-weight: 500;
+	font-family: sans-serif;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-animation: sectitle0 1s ease-in-out 100ms forwards;
+  animation: sectitle0 1s ease-in-out 100ms forwards;
+  
+}
+
+@-webkit-keyframes 
+sectitle0 {  0% {
+ -webkit-transform: translateX(-100%);
+ transform: translateX(-100%);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+ @keyframes 
+sectitle0 {  0% {
+ -webkit-transform: translateX(-100%);
+ transform: translateX(-100%);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+ @-webkit-keyframes 
+sec0 {  0% {
+ -webkit-transform: translateX(100%);
+ transform: translateX(100%);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+ @keyframes 
+sec0 {  0% {
+ -webkit-transform: translateX(100%);
+ transform: translateX(100%);
+}
+ 100% {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="can">
+		<div id="intro">
+			<h2 id="title">
+				Come Join Us!!
+			</h2>
+
+		</div>
+
+		<div id="intro1">
+			<h2 id="title1">
+				To Better Serve.
+			</h2>
+
+		</div>
+  
+
+</div>
+<ul class="ul" style="font-family: sans-serif;">
+  <li><img src="{% static 'arrow.png' %}" id="downBtn" onclick="function3()"></li>
+  <li class="name_navbar" id="name_navbar1">VISITORS ENTRY</li>
+  <hr class="ul_hr">
+  <li class="li1" id="lii1"><a href="{% url 'assignment:index' %}">Home</a></li>
+  <hr class="ul_hr">
+  <hr class="ul_hr">
+  <li class="li" id="lii"><a href="{% url 'assignment:signup' %}">Signup</a></li>
+  <hr class="ul_hr">
+  <li class="li2" id="lii2"><a class="active" href="{% url 'assignment:login' %}">Login</a></li>
+  <hr class="ul_hr">
+  <li class="li3" id="lii3"><a class="active" href="{% url 'assignment:booking' %}">Book appointment</a></li>
+  <hr class="ul_hr">
+  <li class="li4" id="lii4"><a class="active" href="{% url 'assignment:checkout' %}">Checkout</a></li>
+  
+  <li><img src="{% static 'arrow.png' %}" id="upBtn" onclick="function2()"></li>
+  
+</ul>
+<div class="wrapper">
+    {% if messages %}
+    {% for message in messages %}
+    <p style="color: red;margin-left:20px;font-size: 30px;">
+      {{message}}
+    </p>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+	
+</body>
+</html>

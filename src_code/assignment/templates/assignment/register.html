@@ -1,0 +1,63 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'iofrm-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'iofrm-theme4.css' %}">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="{% static 'graphic1.svg' %}" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Get more things done with Loggin platform.</h3>
+                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                        <div class="page-links">
+                            <a href="{% url 'assignment:login' %}">Login</a><a href="{% url 'assignment:signup' %}" class="active">Register</a>
+                        </div>
+                        <form action="{% url 'assignment:signup' %}" method="POST" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <input class="form-control" type="email" name="email" maxlength="255" required id="id_email" placeholder="Email" required>
+                          <input class="form-control" type="text" name="name" maxlength="255" required id="id_name" placeholder="Full Name" required>
+                          <input class="form-control" type="text" name="role" maxlength="255" required id="id_role" placeholder="Role" required>
+                          <input class="form-control" type="text" name="department" maxlength="255" required id="id_department" placeholder="Department" required>
+                          <select class="form-control" name="sex" id="id_sex">
+                            <option  value="Male">Male</option>
+                            <option  value="Female">Female</option>
+                          </select required>
+                         
+                          <input class="form-control" type="text" name="address" maxlength="255" required id="id_address" placeholder="Address" required>
+                  
+                          <input class="form-control" type="password" name="password1" required id="id_password1" placeholder="Password" required>
+                          <input class="form-control" type="password" name="password2" required id="id_password2" placeholder="Password Confirmation" required>
+                          <br>
+                            
+                          <div class="form-button">
+                              <button id="submit" type="submit" class="ibtn">Register</button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="{% static 'jquery.min.js' %}"></script>
+<script src="{% static 'popper.min.js' %}"></script>
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

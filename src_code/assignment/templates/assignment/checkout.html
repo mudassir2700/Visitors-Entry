@@ -1,0 +1,117 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+     <link rel="icon" type="image/png" href="https://png.icons8.com/cotton/1600/online-store.png" />
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>BeYou</title>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+   
+body {
+    background: #C7BEBF !important;    
+}
+
+.wrapper {  
+    margin-top: 100px;
+  margin-bottom: 80px;
+  transition: all 0.35s;
+}
+.wrapper :hover{
+    box-shadow: 2px 2px 2px white;
+    transition: all 0.35s;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+  border-radius: 10px;
+
+
+  .form-signin-heading,
+    .checkbox {
+      margin-bottom: 30px;
+    }
+
+    .checkbox {
+      font-weight: normal;
+    }
+
+    .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+        @include box-sizing(border-box);
+
+        &:focus {
+          z-index: 2;
+        }
+    }
+
+    input[type="text"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+      margin-bottom: 20px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+}
+
+</style>
+
+</head>
+<body>
+	<h1 style="text-align: center;">Checkout</h1>
+	<div class="wrapper">
+    <form class="form-signin" action="{% url 'assignment:checkout' %}" method="POST">{% csrf_token %}      
+      <h2 class="form-signin-heading">Enter your Bookin Id</h2>
+      <p></p>
+      <input class="form-control" placeholder="Booking Id" type="text" name="bookid" maxlength="255" required id="id_name">
+      <p></p>
+      
+      
+<input type="submit" value="Submit" class="btn btn-primary pull-right" />
+<input type="hidden" name="next" value="{{ next }}" />  
+    </form>
+  </div>
+  <div class="wrapper">
+		{% if messages %}
+		{% for message in messages %}
+		<p style="color: red;margin-left:20px;font-size: 30px;">
+			{{message}}
+		</p>
+		{% endfor %}
+		{% endif %}
+	</div>
+
+</body>
+</html>
+
+
+

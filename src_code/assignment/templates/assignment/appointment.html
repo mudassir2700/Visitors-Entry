@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form action="{% url 'assignment:booking' %}" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}<br>
+		<button type="submit">Book</button>
+	</form>
+	<div>
+		{% if messages %}
+		{% for message in messages %}
+		<p>
+			{{message}}
+		</p>
+		{% endfor %}
+		{% endif %}
+	</div>
+
+
+</body>
+</html>

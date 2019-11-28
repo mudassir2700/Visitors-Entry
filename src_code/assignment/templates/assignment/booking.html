@@ -1,0 +1,133 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{% static 'booking_css/bootstrap.min.css' %}" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{% static 'booking_css/style.css' %}" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="wrapper">
+		{% if messages %}
+		{% for message in messages %}
+		<p style="color: red;margin-left:20px;font-size: 30px;">
+			{{message}}
+		</p>
+		{% endfor %}
+		{% endif %}
+	</div>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Make your reservation</h1>
+						</div>
+						<form action="{% url 'assignment:booking' %}" method="POST">
+							{% csrf_token %}
+							<div class="form-group">
+								<input class="form-control" type="text" placeholder="Name" name="name">
+								<span class="form-label">Name</span>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="text" name="in_date" required id="id_in_date" placeholder="DD/MM/YYYY HH:MM" required>
+										<span class="form-label">Check In</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="text" name="out_date" required id="id_in_date" placeholder="DD/MM/YYYY HH:MM" required>
+										<span class="form-label">Check out</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<select class="form-control" name="host" required id="id_host" required>
+											<option value="" selected>---------</option>
+											{% for j in all_hosts %}
+											<option value="{{j.pk}}">{{j.email}},{{j.name}},{{j.department}}</option>
+											{% endfor %}
+											
+										</select>
+									</div>
+									
+								</div>
+								
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="email" name="email" maxlength="255" required id="id_email" placeholder="Enter your Email">
+										<span class="form-label">Email</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control" type="number" name="contact" min="-9223372036854775808" max="9223372036854775807" required id="id_contact" placeholder="Enter you Phone">
+										<span class="form-label">Phone</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn" type="submit">Book Now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="{% static 'booking_js/jquery.min.js' %}"></script>
+	<script>
+		$('.form-control').each(function () {
+			floatedLabel($(this));
+		});
+
+		$('.form-control').on('input', function () {
+			floatedLabel($(this));
+		});
+
+		function floatedLabel(input) {
+			var $field = input.closest('.form-group');
+			if (input.val()) {
+				$field.addClass('input-not-empty');
+			} else {
+				$field.removeClass('input-not-empty');
+			}
+		}
+	</script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

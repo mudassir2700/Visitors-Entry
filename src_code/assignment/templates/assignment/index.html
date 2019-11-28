@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	Welcome
+	<div>
+		{% if messages %}
+		{% for message in messages %}
+		<p>
+			{{message}}
+		</p>
+		{% endfor %}
+		{% endif %}
+	</div>
+	<div>
+		<a href="{% url 'assignment:booking' %}">Book appointment</a>
+		<a href="{% url 'assignment:checkout' %}">Checkout</a>
+	</div>
+
+</body>
+</html>
