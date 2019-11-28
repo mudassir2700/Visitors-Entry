@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+
+<style type="text/css">
+		.con{
+			 position: relative;
+             text-align: center;
+             color: white;
+             max-height: 50%;
+
+             
+		}
+		
+		.centered1{
+			position: absolute;
+			top: 30%;
+			left: 25%;
+		}
+
+		.centered2{
+			position: absolute;
+			top:40%;
+			left: 45%;
+		}
+	</style>
+
+<body>
+	<div class="bg-image">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'assignment:index' %}">Visitor-Entry</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+</nav>
+</div>
+	<h2>Booking Reservations</h2>
+	
+
+	<!--table>
+		<th>order-id</th>
+		<th>task</th>
+		<th>date</th>
+		<th>Time</th>
+		<th>Table Size</th>
+		<th>Meal Choice</th>
+		<th>Customer Email</th>
+		<tr>
+			{% for i in res %}
+			<td>
+				{{i.order_id}}
+			</td>
+			<td>{{i.name}}</td>
+			<td>{{i.date}}</td>
+			<td>{{i.slot}}</td>
+			<td>{{i.tablesize}}</td>
+			<td>{{i.mealchoice}}</td>
+			<td>{{i.cust_email}}</td>
+		</tr>
+		{% endfor %}
+	</table-->
+
+	<div class="table-responsive">
+		<table  class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th>Host Name</th>
+		            <th>In time</th>
+		<th>Out Time</th>
+		<th>Address</th>
+		<th>Visitor Name</th>
+		
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+			{% for i in filt %}
+			<td>
+				{{i.host.name}}
+			</td>
+			<td>{{i.in_time}}</td>
+			<td>{{i.out_time}}</td>
+			<td>{{i.host.address}}</td>
+			<td>{{i.name}}</td>
+		</tr>
+		{% endfor %}
+			</tbody>
+			
+		</table>
+		
+	</div>
+
+</body>
+</html>
