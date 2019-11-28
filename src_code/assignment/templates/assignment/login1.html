@@ -36,6 +36,17 @@
                                 <button id="submit" type="submit" class="ibtn">Login</button> 
                             </div>
                         </form>
+                        <h3>
+                             <div class="wrapper">
+        {% if messages %}
+        {% for message in messages %}
+        <p style="color: red;margin-left:20px;font-size: 30px;">
+            {{message}}
+        </p>
+        {% endfor %}
+        {% endif %}
+    </div>
+                        </h3>
                     </div>
                 </div>
             </div>
