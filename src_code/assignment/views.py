@@ -24,13 +24,15 @@ def homepage(request):
 
 
 def register(request):
+
 	if request.method == 'POST':
 		form = UserAdminCreationForm(request.POST or None,request.FILES or None)
 		if form.is_valid():
 			form.save()
 			user,msg=form.save(commit=False)
 			if msg=="":
-				return render(request,'assignment/mainpage.html')
+				messages.success(request,'Your credentials are saved..')
+				return redirect('assignment:login')
 			else:
 				messages.error(request,msg)
 				return redirect('assignment:index')
@@ -48,7 +50,12 @@ def login_view(request):
 			user=form.get_user()
 			#us=User.objects.all()
 			login(request,user)
-			return render(request,'assignment/mainpage.html')
+			x=request.user
+			#xlist = x.split(',')
+			specific_users = Appointment.objects.filter(host=x)
+			#print(specific_users) 
+			#print(ffhkhkdhkh)
+			return render(request,'assignment/mainpage.html',{'specific_users':specific_users})
 
 	else:
 		form = AuthenticationForm()
@@ -153,5 +160,10 @@ def checkout_view(request):
 			return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 	return render(request,'assignment/checkout.html')
+
+def reservations_view(request):
+	filt = Appointment.objects.filter(meeting_status='Pending')
+	return render(request,'assignment/filt.html',{'filt':filt})
+
 
 
