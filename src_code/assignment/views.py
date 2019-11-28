@@ -125,10 +125,14 @@ def booking_view(request):
 				user.save()
 				subject = 'Appointment'
 				message ="Name : "+user.name+"\n"+"Contact Number : "+str(user.contact)+'\n'+"Email : "+str(user.email)+'\n'+"In Time : "+str(user.in_time)+'\n'+"Out Time : "+str(user.out_time)+'\n'+"Booking Id : "+str(user.booking_id)
+				message1 = "Hello "+user.name+"Your Booking Id : "+str(user.booking_id)
 				to_email = user.host.email
+				to_email1 = user.mail
 				from_email = settings.EMAIL_HOST_USER
 				to_list = [to_email,settings.EMAIL_HOST_USER]
+				to_list1 = [to_email1,settings.EMAIL_HOST_USER]
 				send_mail( subject, message, from_email,to_list,fail_silently=True)
+				send_mail( subject, message1, from_email,to_list1,fail_silently=True)
 				messages.success(request,'Your booking is complete')
 				return redirect('assignment:index')
 	else:
